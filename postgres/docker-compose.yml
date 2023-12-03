@@ -1,0 +1,40 @@
+version: '3'
+services:
+ pg_db:
+  image: ${PG_DB_IMG}:${PG_DB_IMG_TAG}
+  container_name: pg_db
+  ports:
+   - 5432:5432
+  environment:
+   - POSTGRES_PASSWORD=${PG_DB_PASSWORD}
+   - PGDATA=/var/lib/postgresql/data/pgdata
+  volumes:
+   - pg_db_data:/var/lib/postgresql/data
+  networks:
+   - dev
+ pg_admin:
+  image: dpage/pgadmin4:8.0
+  container_name: pg_admin
+  ports:
+   - 8000:80
+  environment:
+   - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+   - PGADMIN_DEFAULT_PASSWORD=admin
+  volumes:
+   - pg_admin_servers:/pgadmin4/servers.json
+   - pg_admin_data:/var/lib/pgadmin
+  networks:
+   - dev
+
+volumes:
+  pg_admin_servers:
+   name: pg_admin_servers
+  pg_admin_data:
+   name: pg_admin_data
+  pg_db_data:
+   name: pg_db_data
+
+networks:
+ dev:
+  external: true
+    
