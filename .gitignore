@@ -1,0 +1,2 @@
+keycloak/postgresql_data
+**/.env.local
