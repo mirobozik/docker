@@ -1,0 +1,22 @@
+# NOTE: This docker-compose.yml is meant to be just an example guideline
+# on how you can achieve the same. It is not intented to run out of the box
+# and you must edit the below configurations to suit your needs.
+
+version: "3.7"
+
+services:
+ listmonk:
+  image: listmonk/listmonk:latest
+  ports:
+   - "9000:9000"
+  networks:
+   - dev
+  environment:
+   - TZ=Etc/UTC
+  volumes:
+    - ./config.toml:/listmonk/config.toml
+  command: [sh, -c, "yes | ./listmonk --config config.toml"]
+
+networks:
+  dev:
+    external: true
