@@ -22,7 +22,7 @@ services:
       - dev
 
   directus:
-    image: directus/directus:10.8.3
+    image: directus/directus:10.11.2
     ports:
       - 8055:8055
     networks:
