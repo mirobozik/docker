@@ -2,7 +2,7 @@ services:
   zitadel:
     networks:
       - dev
-    image: 'ghcr.io/zitadel/zitadel:v2.51.4'
+    image: 'ghcr.io/zitadel/zitadel:v2.64.1'
     command: 'start-from-init --masterkey "MasterkeyNeedsToHave32Characters" --tlsMode disabled'    
     environment:
       - 'ZITADEL_DATABASE_POSTGRES_HOST=pg_db'
