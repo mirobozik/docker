@@ -1,0 +1,13 @@
+POST http://localhost:8055/auth/login
+content-type: application/json
+
+{
+    "email": "miro.bozik@outlook.com",
+    "password": "d1r3ctu5"
+}
+
+###
+
+GET http://localhost:8055/items/organization
+accept: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVmNzllZTZlLWFmZmQtNGViNi05MmIwLTdlNzQ1NWI2ZjRjMiIsInJvbGUiOiI3YzU0NWE1Zi0xYjFiLTQwODktYjE0Ni05OTI1NDcwMGQ0YTkiLCJhcHBfYWNjZXNzIjpmYWxzZSwiYWRtaW5fYWNjZXNzIjpmYWxzZSwiaWF0IjoxNzIxNjQyODQ1LCJleHAiOjE3MjE2NDM3NDUsImlzcyI6ImRpcmVjdHVzIn0.0zER_U1PBQIaEX3EEBnponk9pRYHdVS36bgrQv1CdWU
