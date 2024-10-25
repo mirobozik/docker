@@ -1,4 +1,4 @@
 keycloak/postgresql_data
-**/.env.local
+**/.env
 directus/data**
 directus/uploads**
